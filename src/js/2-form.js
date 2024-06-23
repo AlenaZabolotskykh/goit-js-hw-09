@@ -1,4 +1,6 @@
 const form = document.querySelector('.feedback-form');
+const emailInput = form.querySelector('input')
+const messageInput = form.querySelector('textarea')
 
 const formData = {
   email: '',
@@ -19,6 +21,8 @@ function checkLocalStorage() {
     const { email, message } = JSON.parse(value);
     formData.email = email;
     formData.message = message;
+    emailInput.value = email;
+    messageInput.value = message;
   }
 }
 
